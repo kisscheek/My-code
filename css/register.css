@@ -1,0 +1,198 @@
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    margin: 0 auto;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+    box-sizing: border-box;
+
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}
+
+
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    border: 0px;
+    outline: none;
+}
+
+/* 头部start */
+.caidan {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #f5e6c5;
+}
+
+.return {
+    position: absolute;
+    left: 2%;
+}
+
+.return a {
+    position: absolute;
+    top: 10px;
+    left: 2%;
+    width: 30px;
+    height: 30px;
+    background: url(../images/fanhui.png);
+    background-size: 30px 30px;
+}
+
+.tishi {
+    position: absolute;
+    top: 10px;
+    left: 26%;
+    font-size: 23px;
+    color: #000;
+}
+
+/* 头部end */
+.logo {
+    margin-top: 42px;
+    width: 100%;
+    height: 116px;
+    background: url(../images/logo.png) no-repeat;
+    background-size: 100% 121px;
+}
+
+/* 登录界面start */
+.denglu {
+    margin-top: 10px;
+    position: relative;
+    width: 80%;
+    height: 300px;
+    margin-left: 10%;
+    /* background-color: #666; */
+    background: -webkit-linear-gradient(left top, #ffda8f, #d5c79c);
+    border-radius: 15px;
+    box-shadow: 2px 2px rgba(0, 0, 0, .3);
+}
+
+.zhanghao .zhanghao1 {
+    position: absolute;
+    top: 35px;
+    left: 10%;
+    width: 80%;
+    height: 30px;
+    border-radius: 20px;
+    text-indent: 15px;
+}
+
+.mima .mima1 {
+    position: absolute;
+    top: 80px;
+    left: 10%;
+    width: 80%;
+    height: 30px;
+    border-radius: 20px;
+    text-indent: 15px;
+}
+
+.anniu {
+    position: absolute;
+    top: 140px;
+    left: 10%;
+    width: 80%;
+    height: 30px;
+    background: -webkit-linear-gradient(left bottom, #fa5a55, #FA994D);
+    color: #000;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+    border-style: none;
+}
+
+.denglu1 {
+    position: absolute;
+    top: 180px;
+    left: 3%;
+    color: #000;
+}
+
+.denglu2 {
+    position: absolute;
+    top: 180px;
+    left: 63%;
+    color: #000;
+}
+
+.fengge {
+    position: absolute;
+    top: 215px;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: #000;
+}
+
+.wenzi {
+    position: absolute;
+    top: 202px;
+    left: 30%;
+    width: 40%;
+    height: 20px;
+    color: #000;
+    /* overflow: hidden; */
+    background: -webkit-linear-gradient(left top, #edd199, #decb90);
+}
+
+.weixing {
+    position: absolute;
+    top: 235px;
+    left: 16%;
+    width: 40px;
+    height: 40px;
+    background: url(../images/weixing.png);
+    background-size: 40px 40px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+
+.qq {
+    position: absolute;
+    top: 235px;
+    left: 41%;
+    background: url(../images/QQ.png);
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+
+.zhifubao {
+    position: absolute;
+    top: 235px;
+    left: 67%;
+    width: 40px;
+    height: 40px;
+    background: url(../images/zhifubao.png);
+    background-size: 40px 40px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+/* 登录界面end */

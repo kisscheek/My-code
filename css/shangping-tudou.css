@@ -1,0 +1,191 @@
+.box {
+    background-color: #f5e6c5;
+    z-index: 1000;
+    position: sticky;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.caidan {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background-color: transparent !important;
+    min-width: 320px;
+    max-width: 540px;
+}
+
+.return a {
+    position: absolute;
+    top: 9px;
+    left: 2%;
+    width: 30px;
+    height: 30px;
+    background: url(../images/fanhui.png);
+    background-size: 30px 30px;
+}
+
+/* 图片栏start  */
+.tupian {
+    width: 100%;
+}
+
+.tupian img {
+    width: 100%;
+    height: auto;
+}
+
+/* 图片栏end  */
+/* 详细栏start */
+.xiangxi {
+    margin-top: 300px;
+    position: relative;
+    height: 80px;
+
+}
+
+.miaoshu {
+    position: absolute;
+    top: 1px;
+    /* left: 5%; */
+    width: 100%;
+    height: 80px;
+    background-color: #f5e6c5;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.miaoshu p {
+    display: block;
+    margin-top: 2px;
+    margin-left: 3%;
+    margin-right: 2%;
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+}
+
+.miaoshu::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: #fff;
+}
+
+.fenxiang {
+    position: absolute;
+    top: 54px;
+    left: 23%;
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+
+}
+
+.fenxiang img {
+    width: 20px;
+    height: 20px;
+    vertical-align: text-bottom;
+}
+
+.shoucang {
+    position: absolute;
+    top: 54px;
+    right: 23%;
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.shoucang img {
+    width: 20px;
+    height: 20px;
+    vertical-align: text-bottom;
+}
+
+.gongju {
+    width: 90%;
+    margin-top: 5px;
+    margin-left: 5%;
+    background-color: #fffbe2;
+    border-radius: 10px;
+}
+
+.xiangxi1 {
+    display: flex;
+    height: 50px;
+    border-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.xuan {
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 50px;
+    color: #000;
+}
+
+.yixuan {
+    flex: 1;
+    line-height: 50px;
+    color: #000;
+    overflow: hidden;
+}
+
+.yixuan select {
+    width: 50%;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #fffbe2;
+    padding-left: 2em;
+}
+
+.yixuan img {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    vertical-align: text-bottom;
+}
+
+.dizhi {
+    display: flex;
+    height: 50px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.song {
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 50px;
+    color: #000;
+}
+
+
+.songzhi {
+    flex: 1;
+}
+
+.songzhi img {
+    width: 20px;
+    height: 20px;
+    margin-top: 11px;
+    vertical-align: text-bottom;
+}
+
+.dizhi .songzhi input {
+    height: 30px;
+    border-radius: 10px;
+    font-size: smaller;
+    padding-left: 2em;
+    background-color: #dfd3a5;
+    border: none;
+
+}
+
+/* 详细栏end */

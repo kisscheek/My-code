@@ -1,0 +1,186 @@
+/* body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    margin: 0 auto;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+} */
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    margin: 0 auto;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}
+
+
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 消息栏start */
+
+.gongju {
+    min-width: 320px;
+    max-width: 540px;
+    position: fixed;
+    display: flex;
+    top: 0px;
+    width: 90%;
+    margin-left: 5%;
+    height: 35px;
+    z-index: 100;
+    overflow: hidden;
+    background-color: #f5e6c5;
+}
+
+.gongju span {
+    text-align: center;
+    line-height: 35px;
+    color: #000;
+    text-align: left;
+    font-size: 24px;
+}
+
+.gongju1 {
+    flex: 1;
+}
+
+.gongju svg {
+    text-align: center;
+    line-height: 35px;
+    color: #000;
+    font-size: 30px;
+}
+
+.search {
+    position: absolute;
+    top: 35px;
+    display: flex;
+    height: 30px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+}
+
+.search a {
+    display: block;
+    flex: 1;
+}
+
+.search .search_part {
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 30px;
+    background-color: #f8f4e8;
+    border-radius: 20px;
+}
+
+.search .search_part::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/sousuo.png) no-repeat;
+    background-size: 20px 20px;
+}
+
+.search .search_part::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 44px;
+    width: 1px;
+    height: 20px;
+    background-color: #000;
+}
+
+.search .search_part img {
+    width: 20px;
+    height: 20px;
+}
+
+.search span {
+    position: absolute;
+    top: 3px;
+    left: 25%;
+    font-size: 17px;
+    color: #666;
+}
+
+.message {
+    width: 80%;
+    margin-left: 10%;
+    height: 600px;
+    margin-top: 75px;
+    background-color: #f8f4e8;
+    border-radius: 10px;
+}
+
+.message li {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    border-bottom: #f5e6c5 solid 1px;
+    overflow: hidden;
+}
+
+.message li span {
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background: #f4f4f4;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.message li span img {
+    width: 30px;
+    height: 30px;
+}
+
+.message li .kefu {
+    position: absolute;
+    top: 8px;
+    left: 47px;
+    font-size: 13px;
+    color: #000;
+}
+
+.message li .tishi {
+    position: absolute;
+    top: 18px;
+    left: 40px;
+    font-size: 1px;
+    color: #f31b1b;
+}
+
+/* 消息栏end */

@@ -1,0 +1,32 @@
+.menu {
+    position: fixed;
+    top: 43px;
+    left: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    width: 96%;
+    height: 50px;
+    background-color: #f5e6c5;
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+    min-width: 320px;
+    max-width: 540px;
+
+}
+
+.menu .waiting_shop {
+
+    color: #f00;
+}
+
+/* 
+.waiting_traffic {}
+
+.waiting_evaluate {}
+
+.after_sales {}
+
+.indent {} */

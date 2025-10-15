@@ -1,0 +1,14 @@
+.fenlei {
+    position: fixed;
+    top: -1px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    width: 96%;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 2%;
+    background-color: #f5e6c5;
+}
+
+.leibie1 {}

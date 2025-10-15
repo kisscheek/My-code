@@ -1,0 +1,113 @@
+.search {
+    flex: 1;
+    position: relative;
+    height: 26px;
+    width: 63%;
+    line-height: 24px;
+    font-size: 12px;
+    color: #000;
+    margin: 15px 0px;
+    margin-left: 40px;
+    padding-left: 13%;
+    border-radius: 40px;
+}
+
+.sousuo {
+    position: absolute;
+    top: 18px;
+    left: 13%;
+    width: 20px;
+    height: 20px;
+    z-index: 999;
+}
+
+.sousuo img {
+    width: 20px;
+    height: 20px;
+}
+
+.fenge {
+    position: absolute;
+    top: 18px;
+    left: 20%;
+    width: 1px;
+    height: 20px;
+    background-color: #000;
+    z-index: 999;
+}
+
+/* 搜索栏end */
+.shangping {
+    margin-top: 110px;
+    margin-left: 5%;
+    width: 90%;
+    height: 100px;
+}
+
+.shangping ul li {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffd993;
+
+}
+
+.tuihuan {
+    position: absolute;
+    top: 5px;
+    left: 2%;
+    font-size: 14px;
+    color: red;
+    border: 1px solid #f00;
+}
+
+.shangping ul li img {
+    width: 100px;
+    height: 100px;
+}
+
+.shangping ul li p {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 32%;
+    font-size: 16px;
+    color: #000;
+}
+
+.yuji {
+    position: absolute;
+    top: 55px;
+    left: 49%;
+    color: #000;
+    font-size: 16px;
+}
+
+.shangping ul li .jiage {
+    position: absolute;
+    top: 77px;
+    left: 48%;
+    color: #a1735d;
+    font-size: 19px;
+}
+
+.pingjia {
+    position: absolute;
+    width: 70px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    top: 70px;
+    left: 73%;
+    font-size: 16px;
+    color: red;
+    border: 1px solid #f00;
+    border-radius: 30px;
+
+}
+
+.shangping ul li:nth-child(n+1) {
+    margin-top: 5px;
+}

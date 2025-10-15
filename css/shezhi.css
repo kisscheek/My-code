@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    margin: 0 auto;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 头部start */
+.caidan {
+    height: 50px !important;
+}
+
+.caidan {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #f5e6c5;
+    min-width: 320px;
+    max-width: 540px;
+}
+
+.return {
+    position: absolute;
+    left: 2%;
+}
+
+.return a {
+    position: absolute;
+    top: 3px;
+    left: 2%;
+    width: 30px;
+    height: 30px;
+    background: url(../images/fanhui.png);
+    background-size: 30px 30px;
+}
+
+.tishi {
+    position: absolute;
+    left: 40%;
+    font-size: 23px;
+    color: #000;
+}
+
+/* 头部end */
+ul {
+    margin-top: 60px;
+}
+
+ul li {
+    width: 95%;
+    height: 50px;
+    margin-left: 2.5%;
+    color: #000;
+
+}
+
+ul li img {
+    float: right;
+    width: 20px;
+    height: 20px;
+
+}

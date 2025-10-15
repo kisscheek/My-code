@@ -1,0 +1,68 @@
+.beijin {
+    position: fixed;
+    top: 0px;
+    right: 10px;
+    width: 50%;
+    height: 66px;
+    background: url(../images/logo.png) no-repeat;
+    background-color: #f5e6c5;
+    background-size: contain;
+    z-index: 9999;
+}
+
+.wenzhang {
+    margin-top: 70px;
+    width: 100%;
+}
+
+.wenzhang h5 {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #000;
+}
+
+.wenzhang .jianjie {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    height: 30px;
+    /* background-color: #7d5151; */
+    font-size: smaller;
+    border-bottom: 1px solid #fff;
+}
+
+.wenzhang .jianjie .time {
+    width: 40%;
+}
+
+.wenzhang .jianjie .home {
+    width: 60%;
+}
+
+.wenzhang span {
+    color: #000;
+    font-size: small;
+}
+
+.wenzhang span .top {
+    color: #000;
+    font-size: small;
+    padding-left: 2em;
+}
+
+.wenzhang .shuming {
+    margin-left: 60%;
+    width: 20px;
+    height: 40px;
+    /* background-color: pink; */
+}
+
+.wenzhang .time1 {
+    margin-left: 60%;
+    color: #000;
+    font-size: small;
+    width: 120px;
+    height: 40px;
+    /* background-color: pink; */
+}

@@ -1,0 +1,431 @@
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    margin: 0 auto;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+}
+
+
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.total {
+    position: fixed;
+    bottom: 72px;
+    left: 43%;
+    width: 20px;
+    height: 20px;
+    font-size: 21px;
+    font-weight: 600;
+    color: red;
+    z-index: 10000;
+
+}
+
+/* 工具栏start */
+.GONGJU {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+    background-color: #f5e6c5;
+    min-width: 320px;
+    max-width: 540px;
+    z-index: 99;
+}
+
+.GONGJU .left {
+    position: absolute;
+    left: 4%;
+    color: #000;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.GONGJU .right {
+    position: absolute;
+    right: 2%;
+    color: #000;
+    line-height: 30px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* 工具栏end */
+.FENLEI {
+    position: relative;
+    width: 78%;
+    margin-top: 35px;
+    margin-left: 5%;
+}
+
+.FENLEI .quanbu {
+    position: relative;
+    left: 1%;
+    color: #000;
+    font-size: 20px;
+}
+
+.FENLEI .jiangjia {
+    position: relative;
+    left: 40%;
+    color: #666;
+}
+
+.FENLEI .shaixuan {
+    position: relative;
+    left: 70%;
+    color: #000;
+}
+
+.FENLEI .shaixuan img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.xiangxi {
+    margin-top: 5px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 73px;
+    /* height: 300px; */
+    background-color: #f5e6c5;
+}
+
+.xiangxi ul li {
+    position: relative;
+    width: 100%;
+    height: 113px;
+    border-radius: 5px;
+    background-color: #e4d7bd;
+}
+
+.xiangxi ul li:nth-child(n+1) {
+    margin-top: 5px;
+}
+
+.xiangxi ul li span {
+    position: relative;
+    height: 26px;
+    color: #000;
+    top: 6px;
+    left: 9%;
+}
+
+
+.xiangxi ul li img {
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    width: 20px;
+    height: 20px;
+}
+
+
+.xiangxi ul li .xiangqing {
+    position: relative;
+    margin-top: 10px;
+    height: 120px;
+    background-color: #fff1d4;
+    color: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.xiangxi ul li .xiangqing img {
+    position: absolute;
+    top: 5px;
+    left: 16%;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1;
+
+}
+
+.xiangxi ul li .xiangqing p {
+    position: absolute;
+    top: 5px;
+    left: 43%;
+    font-size: 15px;
+}
+
+.xiangxi ul li .xiangqing .xuanxiang1 {
+    position: absolute;
+    top: 31px;
+    left: 43%;
+    width: 20%;
+    height: 20px;
+    line-height: 20px;
+    background-color: #f2f2f2;
+    border-radius: 13px;
+    font-size: 10px;
+    text-align: center;
+
+}
+
+.xiangxi ul li .xiangqing .jiage {
+    position: absolute;
+    top: 58px;
+    left: 43%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: red;
+}
+
+.mozu {
+    position: absolute;
+    top: 57px;
+    right: 0%;
+    display: flex;
+    /* justify-content: center; */
+    width: 100px;
+    height: 20px;
+}
+
+.xiangxi ul li .xiangqing .shuliang {
+    /* position: absolute;
+    top: 55px;
+    left: 77%; */
+    position: static;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #000;
+    border: 1px solid #d6d4d4;
+    text-align: center;
+}
+
+/* .xiangxi ul li .xiangqing .shuliang::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -79%;
+    width: 25px;
+    height: 20px;
+    background: url(../images/jian.png) no-repeat 6px 0px;
+    background-size: 20px 20px;
+    border-left: 1px solid #d6d4d4;
+    border-top: 1px solid #d6d4d4;
+    border-bottom: 1px solid #d6d4d4;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.xiangxi ul li .xiangqing .shuliang::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 93%;
+    width: 25px;
+    height: 20px;
+    background: url(../images/jia.png) no-repeat 0px 0px;
+    background-size: 20px 20px;
+    border-right: 1px solid #d6d4d4;
+    border-top: 1px solid #d6d4d4;
+    border-bottom: 1px solid #d6d4d4;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+} */
+
+/* 
+.xiangxi ul li::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 2px;
+    left: 0px;
+    background: url(../images/xuanze.png);
+    background-size: 30px 30px;
+} */
+/* 
+.xiangxi ul li:hover:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 2px;
+    left: 0px;
+    background: url(../images/xuanze1.png);
+    background-size: 30px 30px;
+
+} */
+/* 减号样式 */
+.jian {
+    /* position: absolute;
+    top: 55px;
+    left: 70%; */
+    width: 25px;
+    height: 22px;
+    background: url(../images/jian.png) no-repeat 6px 0px;
+    background-size: 20px 20px;
+    border-left: 1px solid #d6d4d4;
+    border-top: 1px solid #d6d4d4;
+    border-bottom: 1px solid #d6d4d4;
+    border-right: 2px solid #e6e5bf;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.jia {
+    /* position: absolute;
+    top: 55px;
+    left: 86%; */
+    width: 25px;
+    height: 22px;
+    background: url(../images/jia.png) no-repeat 0px 0px;
+    background-size: 20px 20px;
+    border-right: 1px solid #d6d4d4;
+    border-top: 1px solid #d6d4d4;
+    border-bottom: 1px solid #d6d4d4;
+    border-left: 2px solid #e6e5bf;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.xiangxi ul li input {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 6px;
+    left: 2%;
+}
+
+.FUKUAN {
+    position: fixed;
+    bottom: 57px;
+    height: 40px;
+    width: 100%;
+    background-color: #f8edd6;
+    min-width: 320px;
+    max-width: 540px;
+    z-index: 99;
+}
+
+.FUKUAN .quanxuan {
+    position: absolute;
+    top: 4px;
+    left: 16%;
+    color: #000;
+    font-size: 17px;
+}
+
+/* 
+.FUKUAN .quanxuan::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -3px;
+    left: -83%;
+    background: url(../images/xuanze.png);
+    background-size: 30px 30px;
+} */
+/* 
+.FUKUAN .quanxuan:hover::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -3px;
+    left: -83%;
+    background: url(../images/xuanze1.png);
+    background-size: 30px 30px;
+} */
+
+.FUKUAN input {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 6px;
+    left: 8%;
+}
+
+.FUKUAN .heji {
+    position: absolute;
+    top: 4px;
+    left: 29%;
+    color: #000;
+    font-size: 21px;
+}
+
+.heji p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+.FUKUAN .jiesuan {
+    position: absolute;
+    top: 5px;
+    right: 1%;
+    width: 100px;
+    height: 31px;
+    line-height: 31px;
+    text-align: center;
+    background-color: #fe5a55;
+    color: #000;
+    font-size: 14px;
+    border-radius: 15px;
+}
+
+/* 点击之后变化效果 */
+/* 
+.xiangxi ul li span:hover::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -7px;
+    left: -42%;
+    background: url(../images/xuanze1.png);
+    background-size: 30px 30px;
+} */
+.del {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff1d4;
+    border: none;
+    font-size: smaller;
+    border-radius: 7px;
+}
+
+#yichu {
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <title>讯飞星火认知大模型接入网页成功</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5165EA;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      background-color: #f2daa6;
+    }
+
+    a {
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      -webkit-user-select: none;
+      -moz-user-focus: none;
+      -moz-user-select: none;
+    }
+
+    /* 头部start */
+    .caidan {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #f5e6c5;
+      min-width: 320px;
+      max-width: 540px;
+      z-index: 99;
+    }
+
+    .return {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 2%;
+      top: 10px;
+    }
+
+    .return a {
+      position: absolute;
+      top: 3px;
+      left: 2%;
+      width: 30px;
+      height: 30px;
+      background: url(./assets/fanhui-964e756b.png);
+      background-size: 30px 30px;
+    }
+
+    .tishi {
+      position: absolute;
+      left: 40%;
+      top: 10px;
+      font-size: 23px;
+      color: #000;
+    }
+
+
+    /* 头部end */
+    #results {
+      margin-top: 40px;
+      width: 100%;
+      /* height: 80%; */
+      background-color: #f2daa6;
+      /* margin-bottom: 50px; */
+    }
+
+    #results #result {
+      margin-top: 40px;
+      width: 100%;
+      height: 100%;
+      padding: 10%;
+      background-color: #f2daa6;
+      white-space: pre-line;
+      outline: none;
+      font-size: larger;
+    }
+
+    #sendVal {
+      display: flex;
+      position: fixed;
+      bottom: 5px;
+      width: 100%;
+      height: 60px;
+      /* background-color: #fff; */
+    }
+
+    #sendVal #question {
+      width: 80%;
+      height: 60px;
+      padding: 5px;
+      border: 0px;
+      outline: none;
+      border-radius: 10px;
+    }
+
+    #sendVal #btn {
+      width: 20%;
+      height: 100%;
+      background-color: #fffd95;
+      outline: none;
+      border-color: transparent;
+      box-shadow: none;
+      border-radius: 10px;
+    }
+
+    #messages {
+      padding: 20px;
+      /* height: calc(100vh - 90px); */
+      /* 根据页面布局调整高度 */
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* #messages:last-child {
+      margin-bottom: 50px;
+    } */
+
+    .message {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      max-width: 80%;
+      /* 限制消息宽度 */
+    }
+
+    /* 
+    .bot-message :last-child {
+      margin-bottom: 50px;
+    } */
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      background-color: #ffbd4e;
+    }
+
+    .message-text {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #fff;
+      word-wrap: break-word;
+      /* margin-bottom: 60px; */
+    }
+
+    .user-message .message-text {
+      /* margin-bottom: 60px; */
+      background-color: #fff;
+      color: #000;
+    }
+
+    .bot-message {
+      align-items: flex-start;
+      margin-left: 0px !important;
+
+    }
+
+    .bot-message .message-text {
+      background-color: #fff;
+      margin-right: 10px;
+      color: #000;
+    }
+
+    .BeiJing {
+      width: 100%;
+      height: 5px;
+      position: fixed;
+      bottom: 0px;
+      background: #f2daa6;
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/index-b5666a7e.js"></script>
+  <link rel="stylesheet" href="./assets/index-307c29af.css">
+</head>
+
+<body>
+  <div class="toubu">
+    <div class="caidan" style="border-bottom: #ccc solid 1px;">
+      <div class="return">
+        <a href="../index.html"></a>
+      </div>
+      <div class="tishi">人工智能</div>
+    </div>
+  </div>
+  <!-- <h1>讯飞星火认知大模型接入网页成功</h1> -->
+  <div id="results">
+    <div id="messages"><!-- 消息容器 --></div>
+  </div>
+  <div id="sendVal">
+    <input id="question" type="text">
+    <button id="btn">发送</button>
+  </div>
+  <div class="BeiJing"></div>
+
+  <script src="./js/vue.js"></script>
+  <script>
+    // 防止误触返回
+    document.addEventListener('plusready', function () {
+      var webview = plus.webview.currentWebview();
+      plus.key.addEventListener('backbutton', function () {
+        webview.canBack(function (e) {
+          if (e.canBack) {
+            webview.back();
+          } else {
+            //webview.close(); //hide,quit
+            //us.runtime.quit();
+            //首页返回键处理
+            //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+            var first = null;
+            plus.key.addEventListener('backbutton', function () {
+              //首次按键，提示‘再按一次退出应用’
+              if (!first) {
+                first = new Date().getTime();
+                console.log('再按一次退出应用');
+                setTimeout(function () {
+                  first = null;
+                }, 1000);
+              } else {
+                if (new Date().getTime() - first < 1500) { plus.runtime.quit(); }
+              }
+            }, false);
+          }
+        })
+      });
+    }); 
+  </script>
+</body>
+
+</html>

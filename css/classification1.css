@@ -1,0 +1,99 @@
+h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: #000;
+}
+
+.caidan {
+    height: 50px !important;
+    /* 另一部分在head */
+}
+
+.left {
+    float: left;
+    position: fixed;
+    width: 22%;
+    margin-top: 80px;
+    background-color: #f0d69c;
+}
+
+.left ul li {
+    width: 100%;
+    height: 46px;
+    /* border: 1px solid #000; */
+    text-align: center;
+    line-height: 46px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+}
+
+.left ul li:nth-child(1) {
+    background-color: #e8b950;
+}
+
+.right {
+    float: right;
+    width: 74%;
+    height: 500px;
+    margin-top: 80px;
+    margin-right: 2%;
+    background-color: #f5e6c5;
+}
+
+.right li {
+    float: left;
+    position: relative;
+    width: 48%;
+    height: 130px;
+    background-color: #d2c29d;
+    border-radius: 20px;
+}
+
+.right li h2 {
+    position: absolute;
+    top: 66px;
+    left: 24%;
+    width: 50%;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: 400;
+}
+
+.right li img {
+    position: absolute;
+    top: 11px;
+    left: 17%;
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+}
+
+.right li span {
+    position: absolute;
+    top: 5px;
+    left: 59%;
+    width: 36%;
+    height: 30px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #000;
+    background-color: #f7c46f;
+    border-radius: 20px;
+}
+
+.right li:nth-child(n+3) {
+    margin-top: 5px;
+}
+
+.right li:nth-child(2n) {
+    margin-left: 1%;
+}

@@ -1,0 +1,104 @@
+/* 底部start */
+.bottom {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #fff4da;
+    min-width: 320px;
+    max-width: 540px;
+}
+
+.dianpu {
+    position: absolute;
+    top: 5px;
+    left: 2%;
+    width: 10%;
+    height: 50px;
+}
+
+.dianpu img {
+    width: 90%;
+    height: 36px;
+}
+
+/* 
+.dianpu p {
+    margin-top: -13px;
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+} */
+
+.kefu {
+    position: absolute;
+    top: 5px;
+    left: 15%;
+    width: 10%;
+    height: 50px;
+}
+
+.kefu img {
+    width: 90%;
+    height: 36px;
+}
+
+.kefu p {
+    margin-top: -13px;
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+.gouwuche {
+    position: absolute;
+    top: 5px;
+    left: 28%;
+    width: 14%;
+    height: 50px;
+}
+
+.gouwuche img {
+    width: 90%;
+    height: 36px;
+}
+
+.gouwuche p {
+    margin-top: -13px;
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+}
+
+.jiaru {
+    position: absolute;
+    top: 5px;
+    left: 43%;
+    width: 28%;
+    height: 40px;
+    background-color: #fe5a55;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+}
+
+.goumai {
+    position: absolute;
+    top: 5px;
+    left: 72%;
+    width: 28%;
+    height: 40px;
+    background-color: #fe5a55;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+}
+
+/* 底部start */

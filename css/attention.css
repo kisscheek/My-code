@@ -1,0 +1,183 @@
+.xiangxi {
+    margin-top: 60px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 73px;
+    /* height: 300px; */
+    background-color: #f5e6c5;
+}
+
+.xiangxi ul li {
+    position: relative;
+    width: 100%;
+    height: 116px;
+    border-radius: 5px;
+    background-color: #e4d7bd;
+}
+
+.xiangxi ul li:nth-child(n+1) {
+    margin-top: 5px;
+}
+
+.xiangxi ul li span {
+    position: relative;
+    height: 26px;
+    color: #000;
+    top: 6px;
+    left: 18%;
+}
+
+
+.xiangxi ul li img {
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    width: 20px;
+    height: 20px;
+}
+
+
+.xiangxi ul li .xiangqing {
+    position: relative;
+    margin-top: 10px;
+    height: 79px;
+    background-color: #fff1d4;
+    color: #000;
+}
+
+.xiangxi ul li .xiangqing img {
+    position: absolute;
+    top: -29px;
+    left: 2%;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f9d9a7;
+
+}
+
+.xiangxi ul li .xiangqing .shop1 {
+    position: absolute;
+    top: 10px;
+    left: 14%;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f9d9a7;
+
+}
+
+.xiangxi ul li .xiangqing .shop2 {
+    position: absolute;
+    top: 10px;
+    left: 33%;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f9d9a7;
+
+}
+
+.xiangxi ul li .xiangqing .shop3 {
+    position: absolute;
+    top: 10px;
+    left: 52%;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f9d9a7;
+
+}
+
+.xiangxi ul li .xiangqing .shop4 {
+    position: absolute;
+    top: 10px;
+    left: 71%;
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f9d9a7;
+
+}
+
+.xiangxi ul li .xiangqing p {
+    position: absolute;
+    top: 5px;
+    left: 43%;
+    font-size: 15px;
+}
+
+.xiangxi ul li .xiangqing .xuanxiang1 {
+    position: absolute;
+    top: 31px;
+    left: 43%;
+    width: 20%;
+    height: 20px;
+    line-height: 20px;
+    background-color: #f2f2f2;
+    border-radius: 13px;
+    font-size: 10px;
+    text-align: center;
+
+}
+
+.xiangxi ul li .xiangqing .jiage {
+    position: absolute;
+    top: 58px;
+    left: 43%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: red;
+}
+
+.xiangxi ul li .xiangqing .shuliang {
+    position: absolute;
+    top: 55px;
+    left: 77%;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #000;
+    border: 1px solid #d6d4d4;
+    text-align: center;
+}
+
+.xiangxi ul li .xiangqing .shuliang::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -79%;
+    width: 25px;
+    height: 20px;
+    background: url(../images/jian.png) no-repeat 6px 0px;
+    background-size: 20px 20px;
+    border-left: 1px solid #d6d4d4;
+    border-top: 1px solid #d6d4d4;
+    border-bottom: 1px solid #d6d4d4;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.xiangxi ul li .xiangqing .shuliang::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 93%;
+    width: 25px;
+    height: 20px;
+    background: url(../images/jia.png) no-repeat 0px 0px;
+    background-size: 20px 20px;
+    border-right: 1px solid #d6d4d4;
+    border-top: 1px solid #d6d4d4;
+    border-bottom: 1px solid #d6d4d4;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
