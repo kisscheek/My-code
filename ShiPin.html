@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>购买</title>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <script src="http://at.alicdn.com/t/c/font_3913686_zb4dtx2jgci.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/adapter.css" />
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/video.css" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bottom.css">
+</head>
+
+<body>
+    <!-- 视频 -->
+    <video class="video" controls autoplay loop>
+        <source src="upload/zhishi.mp4" type="video/ogg">
+    </video>
+    <!-- 顶部两个图标 -->
+    <!-- <div class="content">
+        <div class="top">
+            <a href="index.html">
+                <img style="width: 30px;height: 30px;" src="images/back.png" />
+            </a>
+        </div>
+    </div> -->
+    <!-- 头像 -->
+    <div class="bottom-content">
+        <!-- 左边 -->
+        <div class="bottom-left">
+            <!-- 弹窗内容： -->
+            <!-- <div class="touxiang">
+                <div style="display: flex;align-items: center;">
+                    <img style="width: 50px;height: 50px;border-radius: 50px;" src="images/touxiang1.png" />
+                    <div style="padding-left: 0.7rem;">泡泡龙</div>
+                </div>
+                <div class="buygo" onclick="buy()">购买</div>
+            </div> -->
+            <!-- <div class="address">
+                <img style="width: 20px;height: 20px;padding: 0.3rem;" src="img/wei.png" />
+                <div>甘肃天水武山县</div>
+            </div>
+            <div class="item">新鲜菠菜</div>
+            <div class="item">2月20日10:05 最新报价0.5元/斤</div>
+            <div class="item">#卖货晒货#</div> -->
+        </div>
+        <!-- 右边的头像关注联系商家等 -->
+        <div class="bottom-right">
+            <div style="position: relative;margin-bottom: 0.8rem;">
+                <img style="width: 50px;height: 50px;border-radius: 50px;" src="images/touxiang2.png" />
+                <img style="width: 20px;height: 20px;border-radius: 50px;position: absolute;bottom: -3px;left: 17px;background-color: #fff;"
+                    src="images/guanzhu.png" />
+            </div>
+            <div style="text-align: center;padding: 0.2rem 0;margin-bottom: 0.8rem;">
+                <img style="width: 30px;height: 30px;" src="images/shoucang1.png" />
+                <div>1</div>
+            </div>
+            <div style="text-align: center;padding: 0.2rem 0;margin-bottom: 0.8rem;">
+                <img style="width: 25px;height: 25px;" src="images/lianxi.png" />
+                <div>评论</div>
+            </div>
+            <!-- <div style="text-align: center;padding: 0.2rem 0;margin-bottom: 0.8rem;">
+                <img style="width: 25px;height: 25px;" src="img/share4.png" />
+                <div>打电话</div>
+            </div> -->
+            <div style="text-align: center;padding: 0.2rem 0;padding-bottom: 3.8rem;">
+                <img style="width: 25px;height: 25px;" src="images/fengxiang2.png" />
+                <div>分享</div>
+            </div>
+        </div>
+    </div>
+    <!-- 菜单栏跳转start -->
+    <ul class="end">
+        <li>
+            <a href="index.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zhuye"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="message.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xiaoxi1"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="shipin">
+            <a href="ShiPin.html">
+                <img src="./images/shipin.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="Shopping_cart.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="my.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+    <!-- 网页跳转end -->
+</body>
+<script>
+    // 获取弹窗
+    let alertEi = document.querySelector('.touxiang')
+    function time() {
+        alertEi.style.display = 'block'
+    } setInterval("time()", 3000);
+    document.addEventListener('plusready', function () {
+        var webview = plus.webview.currentWebview();
+        var backButtonClickCount = 0;
+        var backButtonClickTimeoutId = null;
+
+        plus.key.addEventListener('backbutton', function () {
+            webview.canBack(function (e) {
+                if (e.canBack) {
+                    webview.back();
+                } else {
+                    // 处理首页返回键逻辑
+                    backButtonClickCount++;
+                    if (backButtonClickCount == 1) {
+                        console.log('再按一次退出应用');
+                        backButtonClickTimeoutId = setTimeout(function () {
+                            backButtonClickCount = 0;
+                        }, 2000);
+                    } else if (backButtonClickCount == 2) {
+                        clearTimeout(backButtonClickTimeoutId);
+                        plus.runtime.quit();
+                    }
+                }
+            })
+        });
+    });
+</script>
+
+</html>

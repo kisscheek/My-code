@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+    <script src="http://at.alicdn.com/t/c/font_3913686_zb4dtx2jgci.js"></script>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/logistics.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/bottom.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="toubu">
+        <div class="caidan">
+            <div class="tishi">物流信息</div>
+        </div>
+    </div>
+    <div class="shangpin">
+        <ul>
+            <li>
+                <img src="upload/qincai.png" alt="">
+                <span>【今日上新】新鲜芹菜</span>
+                <div class="shuliang">500g/袋</div>
+                <div class="jiage">
+                    <p>￥</p>6.66
+                </div>
+                <div class="gouwuche"></div>
+                <div class="weizhi">订单已发货</div>
+            </li>
+            <li>
+                <img src="upload/hetao.jpg" alt="">
+                <span>【今日上新】新品核桃</span>
+                <div class="shuliang">500g/袋</div>
+                <div class="jiage">
+                    <p>￥</p>6.66
+                </div>
+                <div class="gouwuche"></div>
+                <div class="weizhi">商品已到达兰州中转中心</div>
+            </li>
+    </div>
+    <!-- 菜单栏跳转start -->
+    <ul class="end">
+        <li>
+            <a href="index.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zhuye"></use>
+                </svg>
+            </a>
+
+        </li>
+        <li>
+            <a href="message.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xiaoxi1"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="logistics.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wuliu"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="Shopping_ cart.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="my.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+    <script>
+        // 防止误触返回
+        document.addEventListener('plusready', function () {
+            var webview = plus.webview.currentWebview();
+            plus.key.addEventListener('backbutton', function () {
+                webview.canBack(function (e) {
+                    if (e.canBack) {
+                        webview.back();
+                    } else {
+                        //webview.close(); //hide,quit
+                        //us.runtime.quit();
+                        //首页返回键处理
+                        //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+                        var first = null;
+                        plus.key.addEventListener('backbutton', function () {
+                            //首次按键，提示‘再按一次退出应用’
+                            if (!first) {
+                                first = new Date().getTime();
+                                console.log('再按一次退出应用');
+                                setTimeout(function () {
+                                    first = null;
+                                }, 1000);
+                            } else {
+                                if (new Date().getTime() - first < 1500) { plus.runtime.quit(); }
+                            }
+                        }, false);
+                    }
+                })
+            });
+        }); 
+    </script>
+</body>
+
+</html>

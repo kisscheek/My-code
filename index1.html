@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/head.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <title>讯飞星火认知大模型接入网页成功</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5165EA;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      background-color: #f2daa6;
+    }
+
+    a {
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      -webkit-user-select: none;
+      -moz-user-focus: none;
+      -moz-user-select: none;
+    }
+
+    /* 头部start */
+    .caidan {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #f5e6c5;
+      min-width: 320px;
+      max-width: 540px;
+      z-index: 99;
+    }
+
+    .return {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 2%;
+      top: 10px;
+    }
+
+    .return a {
+      position: absolute;
+      top: 3px;
+      left: 2%;
+      width: 30px;
+      height: 30px;
+      background: url(images/fanhui.png);
+      background-size: 30px 30px;
+    }
+
+    .tishi {
+      position: absolute;
+      left: 40%;
+      top: 10px;
+      font-size: 23px;
+      color: #000;
+    }
+
+
+    /* 头部end */
+    #results {
+      margin-top: 30px;
+      width: 100%;
+      height: 80%;
+      background-color: #f2daa6;
+
+    }
+
+    #results #result {
+      margin-top: 40px;
+      width: 100%;
+      height: 100%;
+      padding: 10%;
+      background-color: #f2daa6;
+      white-space: pre-line;
+      outline: none;
+      font-size: larger;
+    }
+
+    #sendVal {
+      display: flex;
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      height: 30px;
+    }
+
+    #sendVal #question {
+      width: 80%;
+      height: 30px;
+      padding: 5px;
+      border: 0px;
+      outline: none;
+      border-radius: 10px;
+    }
+
+    #sendVal #btn {
+      width: 20%;
+      height: 100%;
+      background-color: #fffd95;
+      outline: none;
+      border-color: transparent;
+      box-shadow: none;
+      border-radius: 10px;
+    }
+
+    #messages {
+      padding: 20px;
+      height: calc(100vh - 90px);
+      /* 根据页面布局调整高度 */
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .message {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      max-width: 80%;
+      /* 限制消息宽度 */
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .message-text {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      word-wrap: break-word;
+    }
+
+    .user-message .message-text {
+      background-color: #0a8c5d;
+      color: white;
+    }
+
+    .bot-message {
+      align-items: flex-start;
+      margin-left: 0px !important;
+
+    }
+
+    .bot-message .message-text {
+      background-color: #e0e0e0;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="toubu">
+    <div class="caidan">
+      <div class="return">
+        <a href="index.html"></a>
+      </div>
+      <div class="tishi">人工智能</div>
+    </div>
+  </div>
+  <!-- <h1>讯飞星火认知大模型接入网页成功</h1> -->
+  <div id="results">
+    <div id="messages"><!-- 消息容器 --></div>
+  </div>
+  <div id="sendVal">
+    <input id="question" type="text">
+    <button id="btn">发送</button>
+  </div>
+  <script type="module" src="main.js"></script>
+  <script src="./js/vue.js"></script>
+</body>
+
+</html>

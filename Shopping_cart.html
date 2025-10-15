@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+    <script src="http://at.alicdn.com/t/c/font_3913686_zb4dtx2jgci.js"></script>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/Shopping_cart.css">
+    <link rel="stylesheet" href="css/bottom.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 工具栏start -->
+    <div class="GONGJU">
+        <span class="left">购物车</span>
+        <!-- <span class="right">管理</span> -->
+    </div>
+    <div class="FENLEI">
+        <span class="quanbu">全部</span>
+        <span class="jiangjia"><a href="Shopping_cart1.html" style="color:#666">降价</a></span>
+        <span class="shaixuan">
+            <img src="images/shaixuan.png" alt="">筛选
+        </span>
+    </div>
+    <div class="xiangxi" id="app">
+        <ul>
+
+            <li v-for="(value,index) in commodity" :key="index">
+                <!-- <input type="checkbox"> -->
+                <span>
+                    {{value.shop}}
+                    <img src="images/xia.png" alt="">
+                </span>
+                <div class="xiangqing">
+                    <img src="upload/shangping.png" alt="">
+                    <p>{{value.name}}</p>
+                    <span class=" xuanxiang1">{{value.size}}</span>
+                    <span class="jiage">￥{{value.price}}</span>
+                    <div class="mozu">
+                        <button @click="decrement(index)" class="jian" v-bind:disabled="value.count<=1"></button>
+                        <span class="shuliang">{{value.count}}</span>
+                        <button @click="increment(index)" class="jia"></button>
+
+
+                    </div>
+                    <button @click="del(index)" class="del">
+                        <img src="images/yichu.png" alt="" id="yichu">
+                    </button>
+                </div>
+
+            </li>
+            <div class="total">
+                ￥{{getTotalprice()}}
+            </div>
+            <!-- <li>
+                <input type="checkbox">
+                <span>
+                    陇上江南文县乡间小铺
+                    <img src="images/xia.png" alt="">
+                </span>
+                <div class="xiangqing">
+                    <img src="./upload/huajiao.jpg" alt="">
+                    <p>陇南市鲜花椒</p>
+                    <span class="xuanxiang1">花椒·大红</span>
+                    <span class="jiage">￥6.66</span>
+                    <span class="shuliang">1</span>
+                </div>
+            </li> -->
+
+        </ul>
+        <!-- <h3>
+            {{getTotalprice()}}
+        </h3> -->
+    </div>
+    <!-- 工具栏end -->
+    <div class="FUKUAN">
+        <!-- <input type="checkbox">
+        <span class="quanxuan">全选</span> -->
+        <span class="heji">合计:<p></p></span>
+        <a href="#">
+            <span class="jiesuan">去结算</span>
+        </a>
+    </div>
+    <!-- 菜单栏跳转start -->
+    <ul class="end">
+        <li>
+            <a href="index.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zhuye"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="message.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xiaoxi1"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="shipin">
+            <a href="ShiPin.html">
+                <img src="./images/shipin.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="Shopping_cart.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="my.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+    <!-- 网页跳转end -->
+    <script src="./js/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                commodity: [{
+                    id: 1,
+                    shop: '陇上江南乡间小铺',
+                    name: '土豆',
+                    price: 2,
+                    count: 1,
+                    size: '1kg',
+                    // image: './upload/tudou.jpg'
+                },
+                {
+                    id: 2,
+                    shop: '陇上江南乡间小铺',
+                    name: '花椒',
+                    price: 50,
+                    count: 2,
+                    size: '1kg',
+                },
+                {
+                    id: 3,
+                    shop: '陇上江南乡间小铺',
+                    name: '魔芋',
+                    price: 5,
+                    count: 2,
+                    size: '0.5kg',
+                }
+                ]
+            },
+            methods:
+            {
+
+                increment(index)     //按钮加加操作
+                {
+                    this.commodity[index].count++;
+                    // this.price = 2 * count;
+                },
+                decrement(index)  //按钮减减操作
+                {
+                    this.commodity[index].count--;
+                },
+                del(index) {
+                    this.commodity.splice(index, 1);
+                },
+                // price() {
+                //     price = this.price * this.count;
+                //     return price;
+                // },
+
+                getTotalprice()      //价格总计
+                {
+                    var sum = 0;
+                    for (let i = 0; i < this.commodity.length; i++) {
+                        sum += this.commodity[i].price * this.commodity[i].count;
+                    }
+                    return sum.toFixed(2);
+                },
+            },
+            filters:
+            {
+                singlePrice(price) {
+                    return "￥" + price.toFixed(2);     //toFixed是保留小数后几位
+                }
+            }
+        })
+        // 防止误触返回
+        document.addEventListener('plusready', function () {
+            var webview = plus.webview.currentWebview();
+            plus.key.addEventListener('backbutton', function () {
+                webview.canBack(function (e) {
+                    if (e.canBack) {
+                        webview.back();
+                    } else {
+                        //webview.close(); //hide,quit
+                        //us.runtime.quit();
+                        //首页返回键处理
+                        //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+                        var first = null;
+                        plus.key.addEventListener('backbutton', function () {
+                            //首次按键，提示‘再按一次退出应用’
+                            if (!first) {
+                                first = new Date().getTime();
+                                console.log('再按一次退出应用');
+                                setTimeout(function () {
+                                    first = null;
+                                }, 1000);
+                            } else {
+                                if (new Date().getTime() - first < 1500) { plus.runtime.quit(); }
+                            }
+                        }, false);
+                    }
+                })
+            });
+        }); 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+    <script src="http://at.alicdn.com/t/c/font_3913686_zb4dtx2jgci.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/AgrFor.css">
+    <link rel="stylesheet" href="css/bottom.css">
+    <link rel="stylesheet" href="css/head.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="toubu">
+        <div class="caidan">
+            <div class="return">
+                <a href="index.html"></a>
+            </div>
+            <div class="tishi">农业论坛</div>
+        </div>
+    </div>
+    <div class="bbs">
+        <div class="top"></div>
+        <header><span onclick="post()">我要发帖</span></header>
+        <section>
+            <ul id="postul">
+                <li>
+                    <div>
+                        <img src="./images/touxiang.png" alt="">
+                    </div>
+                    <h1>凉皮竟然可以这样吃</h1>
+                    <p>
+                        模块信息：凉菜栏目
+                        <span style="margin-left: 100px;">发布时间 : 2024年04月11日 22时49分</span>
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <img src="./images/touxiang.png" alt="">
+                    </div>
+                    <h1>小龙虾爆炒如何入味</h1>
+                    <p>
+                        模块信息：爆炒栏目
+                        <span style="margin-left: 100px;">发布时间 : 2024年04月10日 21时49分</span>
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <img src="./images/touxiang.png" alt="">
+                    </div>
+                    <h1>生菜凉拌加它就够了</h1>
+                    <p>
+                        模块信息：凉菜栏目
+                        <span style="margin-left: 100px;">发布时间 : 2024年04月9日 20时10分</span>
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <img src="./images/touxiang1.png" alt="">
+                    </div>
+                    <h1>醋在凉拌过程中到底有多大作用</h1>
+                    <p>
+                        模块信息：凉菜栏目
+                        <span style="margin-left: 100px;">发布时间 : 2024年04月8日 19时30分</span>
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <img src="./images/touxiang2.png" alt="">
+                    </div>
+                    <h1>那些菜可以凉拌</h1>
+                    <p>
+                        模块信息：凉菜栏目
+                        <span style="margin-left: 100px;">发布时间 : 2024年04月8日 18时42分</span>
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <img src="./images/touxiang.png" alt="">
+                    </div>
+                    <h1>鲢鱼如何清蒸</h1>
+                    <p>
+                        模块信息：清蒸栏目
+                        <span style="margin-left: 100px;">发布时间 : 2024年04月7日 15时30分</span>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <div class="post">
+            <div class="name">标题:</div>
+            <input class="title" placeholder="1-50个字符" id="title">
+            <div class="bankuai">所属版块：</div>
+            <select id="sec">
+                <option selected>请选择版块</option>
+                <option>凉菜栏目</option>
+                <option>清蒸栏目</option>
+                <option>爆炒栏目</option>
+                <option>油炸栏目</option>
+            </select>
+            <textarea class="content" id="content"></textarea>
+            <input class="btn" value="发布" onclick="postSuccess()">
+        </div>
+    </div>
+    <script src="js/AgrFor.js"></script>
+</body>
+
+</html>

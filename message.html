@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/message.css">
+    <link rel="stylesheet" href="css/bottom.css">
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <script src="http://at.alicdn.com/t/c/font_3913686_hohzpoq03z5.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 消息栏start -->
+
+    <div class="gongju">
+        <span>消息</span>
+        <div class="gongju1"></div>
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tianjia"></use>
+        </svg>
+    </div>
+    <div class="search">
+        <a href="SEARCH1.html">
+            <div class="search_part">
+            </div>
+            <span>搜索</span>
+        </a>
+    </div>
+    <ul class="message">
+        <li><a href="kefu-message.html">
+                <span>
+                    <img src="images/kefu.png" alt="">
+                </span>
+                <div class="kefu">我的客服</div>
+                <!-- <div class="tishi">请用户先进行登录</div> -->
+            </a>
+        <li><a href="./dist/index.html">
+                <span>
+                    <img src="images/xinghuo.png" alt="">
+                </span>
+                <div class="kefu">智能客服</div>
+                <!-- <div class="tishi">请用户先进行登录</div> -->
+            </a>
+        </li>
+    </ul>
+    </div>
+    <!-- 消息栏end -->
+    </div>
+
+    <!-- 菜单栏跳转start -->
+    <ul class="end">
+        <li>
+            <a href="index.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zhuye"></use>
+                </svg>
+            </a>
+
+        </li>
+        <li>
+            <a href="message.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xiaoxi1"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="shipin">
+            <a href="ShiPin.html">
+                <img src="./images/shipin.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="Shopping_cart.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="my.html">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-wode"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+    <!-- 菜单导航栏end -->
+    <script>
+        // 防止误触返回
+        document.addEventListener('plusready', function () {
+            var webview = plus.webview.currentWebview();
+            plus.key.addEventListener('backbutton', function () {
+                webview.canBack(function (e) {
+                    if (e.canBack) {
+                        webview.back();
+                    } else {
+                        //webview.close(); //hide,quit
+                        //us.runtime.quit();
+                        //首页返回键处理
+                        //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+                        var first = null;
+                        plus.key.addEventListener('backbutton', function () {
+                            //首次按键，提示‘再按一次退出应用’
+                            if (!first) {
+                                first = new Date().getTime();
+                                console.log('再按一次退出应用');
+                                setTimeout(function () {
+                                    first = null;
+                                }, 1000);
+                            } else {
+                                if (new Date().getTime() - first < 1500) { plus.runtime.quit(); }
+                            }
+                        }, false);
+                    }
+                })
+            });
+        }); 
+    </script>
+</body>
+
+</html>

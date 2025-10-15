@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+    <script src="http://at.alicdn.com/t/c/font_3913686_zb4dtx2jgci.js"></script>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/classification3.css">
+    <link rel="stylesheet" href="css/head.css">
+</head>
+
+<body>
+    <div class="toubu">
+        <div class="caidan">
+            <div class="return">
+                <a href="index.html"></a>
+            </div>
+            <div class="tishi">分类</div>
+        </div>
+    </div>
+    <div class="left">
+        <ul>
+            <li><a href="classification1.html">优质干果</a></li>
+            <li><a href="classification2.html">特色水果</a></li>
+            <li><a href="classification3.html">乡间野味</a></li>
+            <li><a href="classification4.html">炒菜伴侣</a></li>
+            <li><a href="classification5.html">养生食材</a></li>
+            <li><a href="classification6.html">新鲜蔬菜</a></li>
+        </ul>
+    </div>
+    <div class="right">
+
+        <ul>
+            <a href="shangping-zhenzi.html">
+                <li>
+                    <h2>榛子</h2>
+                    <img src="upload/zhenzi.jpg" alt="">
+                    <!-- <span>富含维生素、E越活越年轻</span> -->
+                </li>
+            </a>
+            <li>
+                <h2>板栗</h2>
+                <img src="upload/banli.jpg" alt="">
+                <!-- <span>养胃健脾、补肾强筋、活血止血</span> -->
+            </li>
+            <li>
+                <h2>松子</h2>
+                <img src="upload/songzi.jpg" alt="">
+                <!-- <span>补肾益气、养血补血之精品</span> -->
+            </li>
+            <li>
+                <h2>开心果</h2>
+                <img src="upload/kaixinguo.jpg" alt="">
+                <!-- <span>富含营养补中益气、健脾益脑</span> -->
+            </li>
+            <li>
+                <h2>霹雳果</h2>
+                <img src="upload/piliguo.jpg" alt="">
+                <!-- <span>富含不饱和脂肪酸、降低胆固醇</span> -->
+            </li>
+            <li>
+                <h2>腰果</h2>
+                <img src="upload/yaoguo.png" alt="">
+                <!-- <span>富含微量元素、提升机体代谢能力</span> -->
+            </li>
+            <li>
+                <h2>核桃</h2>
+                <img src="upload/hetao.jpg" alt="">
+                <!-- <span>含不饱和脂肪酸健脑安神</span> -->
+            </li>
+            <li>
+                <h2>杏仁</h2>
+                <img src="upload/xingren.jpg" alt="">
+                <!-- <span>富含维生素E、越活越年轻</span> -->
+            </li>
+            <li>
+                <h2>夏威夷果</h2>
+                <img src="upload/xiaweiyiguo.jpg" alt="">
+                <!-- <span>富含维生素E、越活越年轻</span> -->
+            </li>
+            <li>
+                <h2>巴旦木</h2>
+                <img src="upload/badanmu.jpg" alt="">
+                <!-- <span>富含维生素E、越活越年轻</span> -->
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // 防止误触返回
+        document.addEventListener('plusready', function () {
+            var webview = plus.webview.currentWebview();
+            plus.key.addEventListener('backbutton', function () {
+                webview.canBack(function (e) {
+                    if (e.canBack) {
+                        webview.back();
+                    } else {
+                        //webview.close(); //hide,quit
+                        //us.runtime.quit();
+                        //首页返回键处理
+                        //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+                        var first = null;
+                        plus.key.addEventListener('backbutton', function () {
+                            //首次按键，提示‘再按一次退出应用’
+                            if (!first) {
+                                first = new Date().getTime();
+                                console.log('再按一次退出应用');
+                                setTimeout(function () {
+                                    first = null;
+                                }, 1000);
+                            } else {
+                                if (new Date().getTime() - first < 1500) { plus.runtime.quit(); }
+                            }
+                        }, false);
+                    }
+                })
+            });
+        }); 
+    </script>
+</body>
+
+</html>

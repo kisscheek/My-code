@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+    <script src="http://at.alicdn.com/t/c/font_3913686_zb4dtx2jgci.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/head.css">
+    <link rel="stylesheet" href="css/shangping.css">
+    <link rel="stylesheet" href="css/bottom1.css">
+</head>
+
+<body>
+    <!-- 头部start -->
+    <div class="toubu">
+        <div class="caidan">
+            <div class="return">
+                <a href="index.html"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 头部end -->
+    <div class="tupian">
+        <div class="cont">
+            <ul>
+                <li>
+                    <div class="img">
+                        <img src="upload/wuweizi.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="upload/wuweizi1.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="upload/wuweizi2.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="upload/wuweizi3.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="upload/wuweizi.jpg" alt="">
+                    </div>
+                </li>
+            </ul>
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+    <div class="box">
+        <div class="xiangxi">
+            <div class="miaoshu">
+                <p>【最近晾晒】益气生津五味子</p>
+            </div>
+            <div class="fenxiang">
+                <img src="images/fengxiang.png" alt=""> 分享
+            </div>
+            <div class="shoucang">
+                <img src="images/shoucang.png" alt=""> 收藏
+            </div>
+        </div>
+        <div class="gongju">
+            <div class="xiangxi1">
+                <div class="xuan">选择</div>
+                <div class="yixuan">
+                    <select name="" id="">
+                        <option value="">0.5kg</option>
+                        <option value="">1kg</option>
+                        <option value="">2kg</option>
+                        <option value="">5kg</option>
+                    </select>
+                    <!-- <img src="images/gengduo.png" alt=""> -->
+                </div>
+            </div>
+            <div class="dizhi">
+                <div class="song">送至</div>
+                <div class="songzhi">
+                    <img src="images/dizhi.png" alt=""><input type="text" value="甘肃省兰州市皋兰县" style="outline:medium;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 尾部start -->
+    <div class="bottom">
+        <div class="dianpu">
+            <a href="#">
+                <img src="images/shop.png" alt="">
+                <!-- <p>店铺</p> -->
+            </a>
+        </div>
+        <div class="kefu">
+            <a href="kefu-tudou.html">
+                <img src="images/kefu2.png" alt="">
+                <!-- <p>客服</p> -->
+            </a>
+        </div>
+        <div class="gouwuche">
+            <a href="Shopping_cart.html">
+                <img src="images/gouwuche.png" alt="">
+                <!-- <p>购物车</p> -->
+            </a>
+        </div>
+        <div class="jiaru"><a href="Shopping_cart.html">加入购物车</a></div>
+        <div class="goumai"><a href="Shopping_cart.html">购买</a></div>
+    </div>
+    <!-- 尾部end -->
+    <script>
+        var ul = document.querySelector('ul');
+        var li = ul.querySelector('li');
+        var ol = document.querySelector('ol')
+        var liwidth = li.offsetWidth;
+        var index = 0;
+        var timer = setInterval(function () {
+            // 计算步长
+            index++;
+            var movex = -index * liwidth;
+            // 设置过渡效果  进行移动
+            ul.style.transition = 'all .3s'
+            ul.style.transform = 'translateX(' + movex + 'px)'
+        }, 5000)
+        ul.addEventListener('transitionend', function () {
+            // 监测过度完成，并执行无缝衔接
+            if (index >= ul.children.length - 2) {
+                index = 0;
+                ul.style.transition = 'none'
+                var movex = -index * liwidth;
+                // 设置过度效果  进行移动
+                ul.style.transform = 'translateX(' + movex + 'px)'
+
+            }
+            else if (index < 0) {
+                index = 2;
+                ul.style.transition = 'none'
+                var movex = -index * liwidth;
+                // 设置过渡效果  进行移动
+                ul.style.transform = 'translateX(' + movex + 'px)'
+            }
+            // 小圆点动态变化
+            ol.querySelector('.current').classList.remove('current');
+            ol.children[index].classList.add('current')
+        })
+
+        // 手指拖动轮播图事件
+        var startX = 0; //接收手位置
+        var move = 0; //移动距离
+        var flag = false; //判断手指是否移动
+        ul.addEventListener('touchstart', function (e) {
+            startX = e.targetTouches[0].pageX;
+            clearInterval(timer)
+        })
+        ul.addEventListener('touchmove', function (e) {
+            move = e.targetTouches[0].pageX - startX;
+            var movex = -index * liwidth + move;
+            ul.style.transition = 'none'
+            // 设置过渡效果  进行移动
+            ul.style.transform = 'translateX(' + movex + 'px)';
+            flag = true;
+            e.preventDefault(); //阻止滚动屏幕的默认行为
+        })
+
+        // 手指离开播方下一张或上一张图片
+        ul.addEventListener('touchend', function (e) {
+            if (flag) {
+                // 滑动距离 判断下一张
+                if (Math.abs(move) > 50) {
+                    // right
+                    if (move > 0) {
+                        index--;
+                    } else {
+                        // left
+                        index++;
+                    }
+                    var movex = -index * liwidth;
+                    ul.style.transition = 'all .3s'
+                    // 设置过度效果  进行移动
+                    ul.style.transform = 'translateX(' + movex + 'px)'
+                    timer = setInterval
+                } else {
+                    var movex = -index * liwidth;
+                    ul.style.transition = 'all .1s'
+                    // 设置过度效果  进行移动
+                    ul.style.transform = 'translateX(' + movex + 'px)'
+                }
+            }
+            //重启定时器
+            clearInterval(timer)
+            timer = setInterval(function () {
+                // 计算步长
+                index++;
+                var movex = -index * liwidth;
+                // 设置过度效果  进行移动
+                ul.style.transition = 'all .3s'
+                ul.style.transform = 'translateX(' + movex + 'px)'
+            }, 1000)
+
+        })
+    </script>
+    <script>
+        // 防止误触返回
+        document.addEventListener('plusready', function () {
+            var webview = plus.webview.currentWebview();
+            plus.key.addEventListener('backbutton', function () {
+                webview.canBack(function (e) {
+                    if (e.canBack) {
+                        webview.back();
+                    } else {
+                        //webview.close(); //hide,quit
+                        //us.runtime.quit();
+                        //首页返回键处理
+                        //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+                        var first = null;
+                        plus.key.addEventListener('backbutton', function () {
+                            //首次按键，提示‘再按一次退出应用’
+                            if (!first) {
+                                first = new Date().getTime();
+                                console.log('再按一次退出应用');
+                                setTimeout(function () {
+                                    first = null;
+                                }, 1000);
+                            } else {
+                                if (new Date().getTime() - first
+                                    < 1500) { plus.runtime.quit(); }
+                            }
+                        }, false);
+                    }
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+    <script src="http://at.alicdn.com/t/c/font_3913686_zb4dtx2jgci.js"></script>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/techan.css"> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,user-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+    <script src="http://at.alicdn.com/t/c/font_3913686_zb4dtx2jgci.js"></script>
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/techan.css">
+    <link rel="stylesheet" href="css/head.css">
+</head>
+
+<body>
+    <div class="toubu">
+        <div class="caidan">
+            <div class="return">
+                <a href="index.html"></a>
+            </div>
+            <div class="tishi">优质特产</div>
+        </div>
+    </div>
+    <div class="fenlei">
+        <div class="leibie">
+            <a href="techan.html">选择地区</a>
+            <img src="images/dizhi.png" alt="">
+        </div>
+        <div class="leibie"><a href="techan2.html">甘肃陇南</a></div>
+        <div class="leibie"><a href="techan3.html">甘肃陇西</a></div>
+        <div class="leibie"
+            style="background-color:#ffd57d; border-radius: 10px; padding-left: 5px;padding-right: 5px;font-size: 16px; color: red;">
+            <a href="techan4.html" style="color:red;"><img src="images/genduo3.png" alt=""></a>
+        </div>
+    </div>
+    <div class="xiangxi">
+        <ul>
+            <li>
+                <img src="upload/qincai.png" alt="">
+                <span>【今日上新】新鲜芹菜</span>
+                <div class="shuliang">500g/袋</div>
+                <div class="jiage">
+                    <p>￥</p>6.66
+                </div>
+                <div class="gouwuche">加入购物车</div>
+            </li>
+            <li>
+                <img src="upload/qincai.png" alt="">
+                <span>【今日上新】新鲜芹菜</span>
+                <div class="shuliang">500g/袋</div>
+                <div class="jiage">
+                    <p>￥</p>6.66
+                </div>
+                <div class="gouwuche">加入购物车</div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // 防止误触返回
+        document.addEventListener('plusready', function () {
+            var webview = plus.webview.currentWebview();
+            plus.key.addEventListener('backbutton', function () {
+                webview.canBack(function (e) {
+                    if (e.canBack) {
+                        webview.back();
+                    } else {
+                        //webview.close(); //hide,quit
+                        //us.runtime.quit();
+                        //首页返回键处理
+                        //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+                        var first = null;
+                        plus.key.addEventListener('backbutton', function () {
+                            //首次按键，提示‘再按一次退出应用’
+                            if (!first) {
+                                first = new Date().getTime();
+                                console.log('再按一次退出应用');
+                                setTimeout(function () {
+                                    first = null;
+                                }, 1000);
+                            } else {
+                                if (new Date().getTime() - first < 1500) { plus.runtime.quit(); }
+                            }
+                        }, false);
+                    }
+                })
+            });
+        }); 
+    </script>
+</body>
+
+</html>
